@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro - Willian Raniere</title>
+
+    <style>
+        body {
+            color: black;
+            font-size: 100px;
+            background-color: #f2f2f2;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        span {
+            margin: 0 10px;
+            text-shadow: 0 3px 5px black;
+        }
+
+        @media only screen and (max-width: 400px) {
+            span {
+                font-size: 80px;
+                margin: 0 10px;
+                text-shadow: 0 3px 5px black;
+            }
+        }
+
+        span#mili {
+            width: 50px;
+        }
+
+        label {
+            color: black;
+            font-size: 1.2rem;
+            margin-left: 5px;
+        }
+
+        input#dark_light {
+            width: 50px;
+        }
+
+        .tema {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+            width: 200px;
+            height: 20px;
+        }
+
+        div#actions {
+            position: absolute;
+            bottom: 0;
+            padding: 20px 0;
+        }
+
+        div#actions>input {
+            width: 60px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tema">
+        <label id="tema">Dark and Light</label>
+        <input id="dark_light" type="range" step="1" min="1" max="2" onclick="dark_light()">
+    </div>
+
+    <span id="min"></span>
+    <span id="seg"></span>
+    <span id="mili"></span>
+
+    <div id="actions">
+        <input id="iniciar" type="button" value="Iniciar" onclick="iniciar()">
+        <input id="pausar" type="button" value="Pausar" onclick="pausar()" disabled>
+        <input id="reset" type="button" value="Reset" onclick="reset()" disabled>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
