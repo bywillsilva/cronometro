@@ -50,7 +50,7 @@ div.infoSpace, div.infoR, div.mobileInfo {
     justify-content: center;
 
     position: absolute;
-    bottom: -100px;
+    bottom: -150px;
     color: var(--blue-light-600);
 }
 
@@ -131,6 +131,10 @@ div.mobileInfo > img {
 
     div.infoSpace{
         display: none;
+    }
+
+    div.infoR > img {
+        width: 25%;
     }
 }
 
