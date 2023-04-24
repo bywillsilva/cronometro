@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Digital';
+    src: url("./../fonts/DS-DIGIB.TTF");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue-dark-900: #03001C;
+    --blue-dark-700: #301E67;
+    --blue-light-600: #5B8FB9;
+    --blue-light-400: #B6EADA;
+    --black: #0f0f0f;
+    --white: #f2f2f2;
+    --font-style: "Digital"
+}
+
+html {
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+
+    background-color: var(--blue-dark-900);
+    color: var(--blue-light-400);
+    font-family: var(--font-style);
+}
+
+.crono {
+    margin-bottom: 25px;
+}
+
+#hr, #min, #seg {
+    font-size: 20rem;
+}
+
+div.infoSpace, div.infoR {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: -100px;
+    color: var(--blue-light-600);
+}
+
+.init-animate {
+    animation: initAnimate 7s infinite;
+}
+
+.animate {
+    animation: infoAnimation 7s linear;
+}
+
+div.infoSpace > img, div.infoR > img {
+    width: 40%;
+    position: relative;
+    animation: infoImgAnimation 1.5s infinite;
+}
+
+div.infoR > img {
+    width: 35%;
+    margin-bottom: 5px;
+}
+
+@keyframes initAnimate {
+    0% {
+        bottom: 40px;
+    }
+
+    100% {
+        bottom: 40px;
+    }
+}
+
+@keyframes infoAnimation {
+    0% {
+        bottom: -100px;
+    }
+
+    10% {
+        bottom: 40px;
+    }
+
+    50% {
+        bottom: 40px;
+    }
+
+    90% {
+        bottom: 40px;
+    }
+
+    100% {
+        bottom: -100px;
+    }
+}
+
+@keyframes infoImgAnimation {
+    0% {
+        top: -10px;
+    }
+
+    50% {
+        top: 0;
+    }
+
+    100% {
+        top: -10px;
+    }
+}

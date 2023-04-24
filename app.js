@@ -1,85 +1,105 @@
-var result_min = document.querySelector("#min");
-var result_seg = document.querySelector("#seg");
-var result_mili = document.querySelector("#mili")
+const body = document.querySelector("body");
+const infoSpace = document.querySelector(".infoSpace");
+const infoR = document.querySelector(".infoR");
 
-var tema = document.querySelector("#dark_light")
-var audio = document.querySelector("audio")
+let result_hr = document.querySelector("#hr");
+let result_min = document.querySelector("#min");
+let result_seg = document.querySelector("#seg");
 
-var temp = mili;
-var mili = 0;
-var seg = 0;
-var min = 0;
+let audio = new Audio("./audio/bip.mp3");
+let timer;
+let start;
 
+var mili, seg, min, hr;
+mili = 0; seg = 0; min = 0; hr = 0;
+
+result_hr.innerText = hr + ":";
 result_min.innerText = min + ":";
-result_seg.innerText = seg + ":";
-result_mili.innerText = mili;
+result_seg.innerText = seg;
 
+function writeTime(hr, min, seg) {
+    if (hr < 10 && hr != 0) {
+        result_hr.innerText = "0" + hr + ":";
+    }
+    if (min < 10 && min != 0) {
+        result_min.innerText = "0" + min + ":";
+    }
+
+    if (hr == 0 && min == 0 && seg == 0) {
+        result_hr.innerText = "0" + ":";
+        result_min.innerText = "0" + ":";
+        result_seg.innerText = "0";
+    }
+
+    result_seg.innerText = seg;
+}
 
 function time() {
-    mili++
-
-    result_min.innerText = min + ":";
-    result_seg.innerText = seg + ":";
-    result_mili.innerText = mili;
+    mili++;
 
     if (mili == 60) {
-        mili = 0
-        seg++
-        result_min.innerText = min + ":";
-        result_seg.innerText = seg + ":";
-        result_mili.innerText = mili;
+        mili = 0;
+        seg++;
+        writeTime(hr, min, seg);
     }
+
     if (seg == 60) {
-        seg = 0
-        min++
-        audio.play()
-        result_min.innerText = min + ":";
-        result_seg.innerText = seg + ":";
-        result_mili.innerText = mili;
+        seg = 0;
+        min++;
+        writeTime(hr, min, seg);
+    }
+
+    if (min == 60) {
+        min = 0;
+        hr++;
+        writeTime(hr, min, seg);
     }
 }
 
-function dark_light() {
-    if (tema.value == 1) {
-        document.querySelector("body").style.backgroundColor = "#0f0f0f"
-        document.querySelector("body").style.color = "#f2f2f2";
-        document.getElementById("tema").style.color = "#f2f2f2";
-    } else {
-        document.querySelector("body").style.backgroundColor = "#f2f2f2"
-        document.querySelector("body").style.color = "#0f0f0f";
-        document.getElementById("tema").style.color = "#0f0f0f";
-    }
-}
-
-var timer;
 function iniciar() {
-
+    audio.play();
+    infoSpace.classList.remove("init-animate");
+    infoR.classList.add("animate");
+    
     timer = setInterval(time, 10);
-
-    document.getElementById("iniciar").disabled = true;
-    document.getElementById("pausar").disabled = false;
-    document.getElementById("reset").disabled = false;
-
 }
 
 function pausar() {
+    infoR.classList.remove("animate");
+    infoSpace.classList.add("init-animate");
     clearInterval(timer, 0);
-
-    document.getElementById("iniciar").disabled = false;
-    document.getElementById("pausar").disabled = true;
-    document.getElementById("reset").disabled = false;
 }
 
 function reset() {
+    hr = 0;
     min = 0;
     seg = 0;
     mili = 0;
 
-    result_min.innerText = min + ":";
-    result_seg.innerText = seg + ":";
-    result_mili.innerText = mili;
+    writeTime(hr, min, seg);
+    infoSpace.classList.add("init-animate");
+    infoR.classList.remove("animate");
 
     if (mili == 0) {
-        pausar()
+        pausar();
     }
 }
+
+body.addEventListener("keypress", (Event) => {
+    let code = Event.keyCode;
+    if (code == 32) {
+        if (start == true) {
+            start = false;
+            return pausar();
+        }
+
+        start = true;
+        iniciar();
+    } else if (code == 114) {
+        return reset();
+    }
+});
+
+setTimeout(() => {
+    infoSpace.classList.add("init-animate");
+}, 10);
