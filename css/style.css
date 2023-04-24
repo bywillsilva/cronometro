@@ -43,7 +43,7 @@ body {
     font-size: 20rem;
 }
 
-div.infoSpace, div.infoR {
+div.infoSpace, div.infoR, div.mobileInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +62,7 @@ div.infoSpace, div.infoR {
     animation: infoAnimation 7s linear;
 }
 
-div.infoSpace > img, div.infoR > img {
+div.infoSpace > img, div.infoR > img, div.mobileInfo > img {
     width: 40%;
     position: relative;
     animation: infoImgAnimation 1.5s infinite;
@@ -71,6 +71,11 @@ div.infoSpace > img, div.infoR > img {
 div.infoR > img {
     width: 35%;
     margin-bottom: 5px;
+}
+
+div.mobileInfo > img {
+    width: 20%;
+    margin-bottom: 10px;
 }
 
 @keyframes initAnimate {
@@ -116,5 +121,21 @@ div.infoR > img {
 
     100% {
         top: -10px;
+    }
+}
+
+@media (max-width: 700px) {
+    #hr, #min, #seg {
+        font-size: 10rem;
+    }
+
+    div.infoSpace{
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    #hr, #min, #seg {
+        font-size: 5rem;
     }
 }

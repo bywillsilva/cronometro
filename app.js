@@ -1,6 +1,7 @@
 const body = document.querySelector("body");
 const infoSpace = document.querySelector(".infoSpace");
 const infoR = document.querySelector(".infoR");
+const mobileInfo = document.querySelector(".mobileInfo");
 
 let result_hr = document.querySelector("#hr");
 let result_min = document.querySelector("#min");
@@ -59,14 +60,17 @@ function time() {
 function iniciar() {
     audio.play();
     infoSpace.classList.remove("init-animate");
-    infoR.classList.add("animate");
+    mobileInfo.classList.remove("init-animate");
+    infoR.classList.add("init-animate");
     
     timer = setInterval(time, 10);
 }
 
 function pausar() {
     infoR.classList.remove("animate");
+    infoR.classList.remove("init-animate");
     infoSpace.classList.add("init-animate");
+    mobileInfo.classList.add("init-animate");
     clearInterval(timer, 0);
 }
 
@@ -85,6 +89,16 @@ function reset() {
     }
 }
 
+body.addEventListener("click", () => {
+    if (start == true) {
+        start = false;
+        return pausar();
+    }
+
+    start = true;
+    iniciar();
+});
+
 body.addEventListener("keypress", (Event) => {
     let code = Event.keyCode;
     if (code == 32) {
@@ -100,6 +114,12 @@ body.addEventListener("keypress", (Event) => {
     }
 });
 
+infoR.addEventListener("click", () => {
+    reset()
+    infoR.classList.remove("init-animate");
+});
+
 setTimeout(() => {
     infoSpace.classList.add("init-animate");
+    mobileInfo.classList.add("init-animate");
 }, 10);
