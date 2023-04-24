@@ -124,6 +124,12 @@ div.mobileInfo > img {
     }
 }
 
+@media (max-width: 1000px) {    
+    #hr, #min, #seg {
+        font-size: 10rem;
+    }
+}
+
 @media (max-width: 700px) {
     #hr, #min, #seg {
         font-size: 10rem;
@@ -136,10 +142,15 @@ div.mobileInfo > img {
     div.infoR > img {
         width: 15%;
     }
-}
-
-@media (max-width: 700px) {
+    
     #hr, #min, #seg {
         font-size: 5rem;
     }
+}
+
+@media (min-width: 700px) {
+    div.mobileInfo {
+        display: none;
+    }
+
 }
