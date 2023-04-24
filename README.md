@@ -1,1 +1,1 @@
-<h1 align="center">Cron</h1>
+<h1 align="center">Cronometro - by Will</h1>
