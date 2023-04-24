@@ -74,7 +74,7 @@ div.infoR > img {
 }
 
 div.mobileInfo > img {
-    width: 20%;
+    width: 15%;
     margin-bottom: 10px;
 }
 
@@ -134,7 +134,7 @@ div.mobileInfo > img {
     }
 
     div.infoR > img {
-        width: 25%;
+        width: 15%;
     }
 }
 
