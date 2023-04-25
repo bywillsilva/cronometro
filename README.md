@@ -9,7 +9,7 @@
 ## <h2 id="descricao-do-projeto">Descrição do projeto</h2>
 Neste projeto foi utilizado apenas HTML, CSS e JS para o desenvolvimento de toda a interface e funcionalidade. Cronômetro desenvolvido como uma alternativa para o dia a dia de qualquer usuário.
 
-Utilizando esta ferramenta você consegui-rá ter acesso à sua principal atividade de forma simples e intuitiva, além de usurfruir de uma interface limpa e moderna.
+Utilizando esta ferramenta você consegui-rá ter acesso a sua principal atividade de forma simples e intuitiva, além de usurfruir de uma interface limpa e moderna.
 
 ## <h2 id="funcionalidades">Funcionalidades</h2>
 - Marcar o tempo: como sua principal funcionalidade, marcar a contagem do tempo corrido em segundos, minutos e horas.
