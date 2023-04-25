@@ -19,3 +19,5 @@ Utilizando esta ferramenta você consegui-rá ter acesso a sua principal ativida
 ## <h2 id="acesso">Acesso</h2>
 Para conseguir utilizar essa ferramenta basta clicar no link: 
 https://bywillsilva.github.io/cronometro
+
+<p>By Will</p>
