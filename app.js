@@ -38,7 +38,7 @@ function writeTime(hr, min, seg) {
 function time() {
     mili++;
 
-    if (mili == 1000) {
+    if (mili == 100) {
         mili = 0;
         seg++;
         writeTime(hr, min, seg);
@@ -63,7 +63,7 @@ function iniciar() {
     mobileInfo.classList.remove("init-animate");
     infoR.classList.add("init-animate");
     
-    timer = setInterval(time, 1);
+    timer = setInterval(time, 10);
 }
 
 function pausar() {
