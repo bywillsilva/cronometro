@@ -63,7 +63,7 @@ function iniciar() {
     mobileInfo.classList.remove("init-animate");
     infoR.classList.add("init-animate");
     
-    timer = setInterval(time, 10);
+    timer = setInterval(time, 1);
 }
 
 function pausar() {
