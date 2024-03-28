@@ -31,8 +31,10 @@ function writeTime(hr, min, seg) {
         result_min.innerText = "0" + ":";
         result_seg.innerText = "0";
     }
-
+    
     result_seg.innerText = seg;
+    result_min.innerText = min;
+    result_hr.innerText = hr;
 }
 
 function time() {
