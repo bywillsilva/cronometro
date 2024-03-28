@@ -38,7 +38,7 @@ function writeTime(hr, min, seg) {
 function time() {
     mili++;
 
-    if (mili == 60) {
+    if (mili == 50) {
         mili = 0;
         seg++;
         writeTime(hr, min, seg);
