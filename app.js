@@ -21,9 +21,14 @@ result_seg.innerText = seg;
 function writeTime(hr, min, seg) {
     if (hr < 10 && hr != 0) {
         result_hr.innerText = "0" + hr + ":";
+    } else {
+        result_hr.innerText = hr + ":";
     }
-    if (min < 10 && min != 0) {
+    
+    if (min <= 10 && min != 0) {
         result_min.innerText = "0" + min + ":";
+    } else {
+        result_min.innerText = min + ":";
     }
 
     if (hr == 0 && min == 0 && seg == 0) {
@@ -32,8 +37,6 @@ function writeTime(hr, min, seg) {
         result_seg.innerText = "0";
     }
     
-    result_hr.innerText = hr + ":";
-    result_min.innerText = min + ":";
     result_seg.innerText = seg;
 }
 
