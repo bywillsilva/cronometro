@@ -32,9 +32,9 @@ function writeTime(hr, min, seg) {
         result_seg.innerText = "0";
     }
     
+    result_hr.innerText = hr + ":";
+    result_min.innerText = min + ":";
     result_seg.innerText = seg;
-    result_min.innerText = min;
-    result_hr.innerText = hr;
 }
 
 function time() {
