@@ -19,13 +19,13 @@ result_min.innerText = min + ":";
 result_seg.innerText = seg;
 
 function writeTime(hr, min, seg) {
-    if (hr < 10 && hr != 0) {
+    if (hr < 9 && hr != 0) {
         result_hr.innerText = "0" + hr + ":";
     } else {
         result_hr.innerText = hr + ":";
     }
     
-    if (min <= 10 && min != 0) {
+    if (min < 9 && min != 0) {
         result_min.innerText = "0" + min + ":";
     } else {
         result_min.innerText = min + ":";
